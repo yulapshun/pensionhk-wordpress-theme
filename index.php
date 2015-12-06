@@ -13,14 +13,17 @@ get_header();
 <?php endif; ?>
 <div class="grid">
 <?php
-									   // Start the loop.
+  $count = 0;									   // Start the loop.
   while ( have_posts() ) : the_post();
+
 /*
  * Include the Post-Format-specific template for the content.
  * If you want to override this in a child theme, then include a file
  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
  */
-get_template_part( 'cell', get_post_format() );
+include(locate_template('cell.php'));
+    $count += 1;
+//include(get_template_part( 'cell', get_post_format()));
 // End the loop.
 endwhile;
 ?>

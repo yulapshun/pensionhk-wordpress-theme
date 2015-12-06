@@ -21,7 +21,7 @@ if (has_post_thumbnail()){
     $thumb_url = wp_get_attachment_url( get_post_thumbnail_id() );
 }
 ?>
-<div class='cell' style="<?php echo "background-image: url('".$thumb_url."')" ?>">
+<div class='cell col-<?php echo $count % 3; ?>' style="<?php echo "background-image: url('".$thumb_url."')" ?>">
 <div class='text'>
    <?php the_title(sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>'); ?>
    <?php the_excerpt() ?>
