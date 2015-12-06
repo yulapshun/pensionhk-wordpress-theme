@@ -73,6 +73,90 @@ Use it to make something cool, have fun, and share what you've learned with othe
     display: block;
 }
 
+/* slide */
+
+.slide {
+    position: relative;
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.slide .background {
+    background-color: #AFAFAF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.slide .background.next{
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    /* left: -1200px; */
+    /* right: 1200px; */
+}
+
+.slide .background.previous{
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    /* left: 1200px; */
+    /* right: -1200px; */
+}
+
+.slide .arrow {
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    width: 50px;
+    top: 0;
+    bottom: 0;
+}
+
+.slide .left-arrow {
+    left: 0;
+}
+
+.slide .right-arrow {
+    right: 0;
+}
+
+.slide .arrow svg {
+    fill: white;
+}
+
+.slide .bottom-view {
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    right: 50px;
+    height: 200px;
+}
+
+/* pagination */
+
 .pagination {
     margin-top: 30px;
     margin-bottom: 20px;

@@ -19,6 +19,8 @@ $thumb_url;
 if (has_post_thumbnail()){
     $has_thumb = true;
     $thumb_url = wp_get_attachment_url( get_post_thumbnail_id() );
+} else {
+    $thumb_url = null;
 }
 ?>
 <div class='cell col-<?php echo $count % 3; ?>' style="<?php echo "background-image: url('".$thumb_url."')" ?>">
