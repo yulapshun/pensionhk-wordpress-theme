@@ -11,7 +11,12 @@
 
    <body <?php body_class(); ?>>
    <header id="masthead" class="site-header" role="banner">
-   <a class="banner" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="banner-img" src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>" /></a>
+   <div class="banner">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+      <img class="banner-img" src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+      </a>
+      <img class="banner-img-right" src="<?php echo esc_url( get_theme_mod( 'header_image_right' ) ); ?>" alt="right header image" />
+      </div>
    <nav>
    <ul class="nav-menu">
    <?php wp_list_categories('order_by=ID&hide_empty=0&title_li=&exclude=1'); ?>

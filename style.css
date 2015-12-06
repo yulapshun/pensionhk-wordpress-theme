@@ -26,9 +26,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
     height: 100px;
 }
 
+.banner-img-right {
+    float: right;
+    width: 900px;
+    height: 100px
+}
+
 .nav-menu {
     border-color: #0000FF;
-    background-color: #7ec0ee;
+    background-color: #7EC0EE;
     width: 1200px;
     margin: 0 auto;
     padding: 8px 0;
@@ -39,7 +45,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     position: relative;
     list-style-type: none;
     text-align: left;
-    background-color: #7ec0ee;
+    background-color: #7EC0EE;
     padding: 5px 0;
 }
 
@@ -84,12 +90,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
     margin-top: 10px;
 }
 
-.col-0 {
+col-0 {
     float: left;
 }
 
 .col-1 {
-    margin: 10px 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .col-2 {
