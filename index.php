@@ -3,18 +3,17 @@ get_header();
 ?>
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
-
-  <?php if ( have_posts() ) : ?>
-
-  <?php if ( is_home() && ! is_front_page() ) : ?>
-  <header>
-  <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-  </header>
-<?php endif; ?>
+<?php
+$the_query = new WP_Query(array(
+    'post_type' => 'post',
+    'posts_per_page' => 18,
+    'paged' => ( get_query_var('paged') ) ? get_query_var('paged') : 1
+));
+?>
 <div class="grid">
 <?php
   $count = 0;									   // Start the loop.
-  while ( have_posts() ) : the_post();
+  while ( $the_query->have_posts() ) : $the_query->the_post();
 
 /*
  * Include the Post-Format-specific template for the content.
@@ -31,18 +30,23 @@ endwhile;
 </div>
 
 <?php
+$temp = $wp_query;
+
+$wp_query = $the_query;
 // Previous/next page navigation.
-the_posts_pagination( array(
-			    'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-			    'next_text'          => __( 'Next page', 'twentyfifteen' ),
-			    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-			    ) );
+// $pages = paginate_links(array(
+//     'mid_size'=>2,
+//     'prev_text'=>__( '上一頁', 'dummy' ),
+//     'next_text'=>__( '下一頁', 'dummy' )
+// ));
+// echo $pages;
+the_posts_pagination(array(
+    'mid_size'=>2,
+    'prev_text'=>__( '上一頁', 'dummy' ),
+    'next_text'=>__( '下一頁', 'dummy' )
+));
+$wp_query = $temp;
 
-// If no content, include the "No posts found" template.
-else :
-  get_template_part( 'content', 'none' );
-
-endif;
 ?>
 
 </main><!-- .site-main -->
