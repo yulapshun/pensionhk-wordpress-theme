@@ -87,31 +87,27 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .slide .background {
     background-color: #AFAFAF;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 1200px;
+    height: 500px;
+    top: 0;    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
 }
 
-.slide .background.next{
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -ms-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
-    /* left: -1200px; */
-    /* right: 1200px; */
+.slide .background.previous-slide {
+    left: -1200px;
 }
 
-.slide .background.previous{
+.slide .background.current-slide {
+    left: 0;
+}
+
+.slide .background.next-slide {
+    left: 1200px;
+}
+
+.transitioning {
     -webkit-transition: .5s;
     -moz-transition: .5s;
     -ms-transition: .5s;
@@ -122,11 +118,52 @@ Use it to make something cool, have fun, and share what you've learned with othe
     -ms-transition-timing-function: linear;
     -o-transition-timing-function: linear;
     transition-timing-function: linear;
-    /* left: 1200px; */
-    /* right: -1200px; */
+}
+
+.slide .background.to-previous {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    left: -1200px;
+}
+
+.slide .background.to-current {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    left: 0px;
+}
+
+.slide .background.to-next {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    left: 1200px;
 }
 
 .slide .arrow {
+    cursor: pointer;
     background-color: rgba(0,0,0,0.7);
     position: absolute;
     width: 50px;

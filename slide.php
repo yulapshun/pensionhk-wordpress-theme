@@ -1,5 +1,7 @@
 <div class="slide">
-  <div class="background"></div>
+  <div class="background previous-slide"></div>
+  <div class="background current-slide"></div>
+  <div class="background next-slide"></div>
   <div class="arrow left-arrow">
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="50px" height="400px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;"
@@ -26,3 +28,4 @@
 
   </div>
 </div>
+
