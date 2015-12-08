@@ -11,6 +11,7 @@ window.onload = function() {
     var previousIndex = maxIndex;
     var currentIndex = 0;
     var nextIndex = currentIndex < maxIndex ? currentIndex + 1 : currentIndex;
+    var transitioning = false;
     
     previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
     currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
@@ -18,8 +19,74 @@ window.onload = function() {
 
     var startSlideShow = function() {
 	return setInterval(function() {
+	    
+	    transitioning = true;
+	    
     	    currentBackground.classList.add("to-previous");
     	    nextBackground.classList.add("to-current");
+	    
+    	    setTimeout(function() {
+		
+    		previousIndex = previousIndex < maxIndex ? previousIndex + 1 : 0;
+    		currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+    		nextIndex = nextIndex < maxIndex ? nextIndex + 1 : 0;
+
+    		currentBackground.classList.remove("to-previous");
+    		nextBackground.classList.remove("to-current");
+		
+    		previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
+    		currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
+    		nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";	   		
+
+		transitioning = false;
+		
+    	    }, 1000);	
+	}, 5000);
+    }
+    var intervalID = startSlideShow();
+
+    leftButton.onclick = function() {
+
+	if (!transitioning) {
+	    
+	    transitioning = true;
+	    
+	    clearInterval(intervalID);
+
+	    previousBackground.classList.add("to-current");
+	    currentBackground.classList.add("to-next");
+	    
+    	    setTimeout(function() {
+		
+    		previousIndex = previousIndex > 0 ? previousIndex - 1 : maxIndex;
+    		currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
+    		nextIndex = nextIndex > 0 ? nextIndex - 1 : maxIndex;
+
+		previousBackground.classList.remove("to-current");
+    		currentBackground.classList.remove("to-next");
+		
+    		previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
+    		currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
+    		nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";	   		
+
+		transitioning = false;
+		
+    	    }, 1000);	
+	    
+	    intervalID = startSlideShow();
+	}
+    }
+
+    rightButton.onclick = function() {
+
+	if (!transitioning) {
+	
+	    transitioning = true;
+	    
+	    clearInterval(intervalID);
+
+	    currentBackground.classList.add("to-previous");
+	    nextBackground.classList.add("to-current");
 
     	    setTimeout(function() {
 		
@@ -34,57 +101,12 @@ window.onload = function() {
     		currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
     		nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";	   		
 
+		transitioning = false;
+		
     	    }, 1000);	
-	}, 5000);
-    }
-    var intervalID = startSlideShow();
-
-    leftButton.onclick = function() {
-	clearInterval(intervalID);
-
-	previousBackground.classList.add("to-current");
-	currentBackground.classList.add("to-next");
-
-    	setTimeout(function() {
 	    
-    	    previousIndex = previousIndex > 0 ? previousIndex - 1 : maxIndex;
-    	    currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
-    	    nextIndex = nextIndex > 0 ? nextIndex - 1 : maxIndex;
-
-	    previousBackground.classList.remove("to-current");
-    	    currentBackground.classList.remove("to-next");
-	    
-    	    previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
-    	    currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
-    	    nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";	   		
-
-    	}, 1000);	
-	
-	intervalID = startSlideShow();
-    }
-
-    rightButton.onclick = function() {
-	clearInterval(intervalID);
-
-	currentBackground.classList.add("to-previous");
-	nextBackground.classList.add("to-current");
-
-    	setTimeout(function() {
-	    
-    	    previousIndex = previousIndex < maxIndex ? previousIndex + 1 : 0;
-    	    currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
-    	    nextIndex = nextIndex < maxIndex ? nextIndex + 1 : 0;
-
-    	    currentBackground.classList.remove("to-previous");
-    	    nextBackground.classList.remove("to-current");
-	    
-    	    previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
-    	    currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
-    	    nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";	   		
-
-    	}, 1000);	
-	
-	intervalID = startSlideShow();
+	    intervalID = startSlideShow();
+	}
     }
     
 }
