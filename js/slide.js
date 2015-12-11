@@ -9,6 +9,7 @@ window.onload = function() {
     var bottomView = slide.querySelector(".bottom-view");
     var titleView = bottomView.querySelector(".title");
     var contentView = bottomView.querySelector(".content");
+    var links = slide.querySelectorAll(".link");
     var maxIndex = slideData.length - 1;
     var previousIndex = maxIndex;
     var currentIndex = 0;
@@ -20,7 +21,10 @@ window.onload = function() {
     titleView.style.marginBottom = "10px";
     
     contentView.style.color = "#F0F0F0";
-    
+
+    for (var i in links) {
+	links[i].href = slideData[currentIndex].link;
+    }
     previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
     currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
     nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";
@@ -43,7 +47,10 @@ window.onload = function() {
 
     		currentBackground.classList.remove("to-previous");
     		nextBackground.classList.remove("to-current");
-		
+
+		for (var i in links) {
+		    links[i].href = slideData[currentIndex].link;
+		}
     		previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
     		currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
     		nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";
@@ -73,10 +80,13 @@ window.onload = function() {
     		previousIndex = previousIndex > 0 ? previousIndex - 1 : maxIndex;
     		currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
     		nextIndex = nextIndex > 0 ? nextIndex - 1 : maxIndex;
-
+		
 		previousBackground.classList.remove("to-current");
     		currentBackground.classList.remove("to-next");
-		
+
+		for (var i in links) {
+		    links[i].href = slideData[currentIndex].link;
+		}
     		previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
     		currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
     		nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";
@@ -110,7 +120,10 @@ window.onload = function() {
 
     		currentBackground.classList.remove("to-previous");
     		nextBackground.classList.remove("to-current");
-		
+
+		for (var i in links) {
+		    links[i].href = slideData[currentIndex].link;
+		}
     		previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
     		currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
     		nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";
@@ -123,6 +136,5 @@ window.onload = function() {
 	    
 	    intervalID = startSlideShow();
 	}
-    }
-    
+    }    
 }

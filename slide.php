@@ -1,6 +1,6 @@
 <div class="slide">
   <div class="background previous-slide"></div>
-  <div class="background current-slide"></div>
+  <a class="link"><div class="background current-slide"></div></a>
   <div class="background next-slide"></div>
   <div class="arrow left-arrow">
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -25,7 +25,10 @@
     </svg>
   </div>
   <div class="bottom-view">
-    <div class="title"></div>
+    <a class="link">
+      <div class="title">
+      </div>      
+    </a>
     <div class="content"></div>
   </div>
 </div>
