@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
    <head>
+   <title>惱人媒體</title>
    <meta charset="<?php bloginfo( 'charset' ); ?>">
    <meta name="viewport" content="width=device-width">
       <meta http-equiv="cache-control" content="max-age=0" />
@@ -38,3 +39,4 @@
    </ul>
    </nav>
    </header><!-- .site-header -->
+      
