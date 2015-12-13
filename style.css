@@ -364,8 +364,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .content .sidebar {
+
+}
+
+.content .sidebar .post-wrapper {
     overflow: hidden;
     border: solid #378DCA 1px;
+    margin-right: 5px;
 }
 
 .content .sidebar .category-name {
@@ -395,4 +400,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
     padding-top: 5px;
     padding-left: 5px;
     font-size: 11px;
+}
+
+.content .sidebar .tag-list {
+    padding-top: 5px;
+}
+
+.content .sidebar .tag-list .tag{
+    float: left;
+    padding: 2px 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    background-color: #378DCA;
+    border-radius: 8px;
+    color: #FFF;
 }

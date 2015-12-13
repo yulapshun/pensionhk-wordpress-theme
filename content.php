@@ -27,6 +27,7 @@ the_date();
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
     <div class="sidebar">
+    <div class="post-wrapper">
     <?php
     $category_name = get_the_category()[0]->name;
     echo "<div class=\"category-name\">".$category_name."</div>";
@@ -35,7 +36,6 @@ the_date();
         'post_type' => 'post',
         'posts_per_page' => 20
     ));
-echo "<div class=\"post-wrapper\">";
 $post_count = 0;
 while ( $sidebar_query->have_posts() ) : $sidebar_query->the_post();
 $permalink = get_the_permalink();
@@ -43,8 +43,20 @@ echo "<a href=".$permalink."><div class=\"post post-".($post_count % 2)."\"><div
 $post_count++;
 endwhile;
 wp_reset_postdata();
-echo "</div>"
     ?>
-    </div>
+</div><!-- .post-wrapper -->
+<div class="tag-list">
+    <div>標籤: </div>
+    <?php
+    $tags = get_tags();
+foreach ( $tags as $tag ) {
+	$tag_link = get_tag_link( $tag->term_id );
+    $tag_name = $tag->name;
+    echo "<a href=\"".$tag_link."\"><div class=\"tag\">".$tag_name."</div></a>";
+}
+    ?>
+</div>
+</div><!-- .sidebar -->
+
     <div class="fb-comments" data-href="<?php echo get_the_permalink(); ?>" data-numposts="5"></div>
 </div>
