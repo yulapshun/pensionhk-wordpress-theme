@@ -5,10 +5,12 @@ get_template_part('slide');
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
 <?php
-$category = get_category( get_query_var( 'cat' ) );
+$category = get_category(get_query_var('cat'));
 $cat_id = $category->cat_ID;
+$tag = get_query_var('tag');
 $the_query = new WP_Query(array(
     'cat'=>$cat_id,
+    'tag'=>$tag,
     'post_type' => 'post',
     'posts_per_page' => 18,
     'paged' => ( get_query_var('paged') ) ? get_query_var('paged') : 1
