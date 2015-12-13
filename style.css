@@ -294,6 +294,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /* grid */
 .grid {
+    position: relative;
     width: 1200px;
     margin: 0 auto;
 }
@@ -310,17 +311,16 @@ Use it to make something cool, have fun, and share what you've learned with othe
     margin-top: 10px;
 }
 
-.col-0 {
-    float: left;
+.cell.col-0 {
+    margin-left: 0px;
 }
 
-.col-1 {
-    margin-left: 15px;
-    margin-right: 15px;
+.cell.col-1 {
+    margin-left: 10px;
 }
 
-.col-2 {
-    float: right;
+.cell.col-2 {
+    margin-left: 10px;
 }
 
 .cell .text {
