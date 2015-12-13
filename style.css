@@ -197,6 +197,76 @@ Use it to make something cool, have fun, and share what you've learned with othe
     height: 200px;
 }
 
+/* popup */
+
+.popup {
+    position: fixed;
+    bottom: -320px;
+    right: 50px;
+    height: 320px;
+    width: 300px;
+}
+
+.popup.show {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    bottom: 0px;
+}
+
+.popup.hide {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    bottom: -320px;
+}
+
+.popup .topbar {
+    position: absolute;
+    background-color: #7EC0EE;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+}
+
+.popup .topbar svg {
+    cursor: pointer;
+    float: right;
+    padding-top: 2.5px;
+    padding-right: 5px;
+    width: 15px;
+    height: 15px;
+    fill: #3A3A3A;
+}
+
+.popup .content {
+    position: absolute;
+    background-color: #AFAFAF;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-size: 300px 300px;
+    background-position: center top;
+}
+
 /* pagination */
 
 .pagination {

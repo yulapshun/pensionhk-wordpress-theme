@@ -3,7 +3,7 @@
 
 function load_dummy() {    
     wp_enqueue_style('dummy-style', get_stylesheet_uri());
-    wp_enqueue_script( 'slide-js', get_template_directory_uri() . '/js/slide.js');
+    wp_enqueue_script('dummy-js', get_template_directory_uri() . '/js/dummy.js');
     $slide_data = array();
     $the_query = new WP_Query(array(
         'post_type' => 'post',
@@ -29,7 +29,12 @@ function load_dummy() {
         'excerpt'=>$excerpt        
     ));
     endwhile;
-    wp_localize_script( 'slide-js', 'slideData', $slide_data);
+    $popup_data = array(
+        'enable'=>get_option('show_popup'),
+        'imageUrl'=>esc_url(get_theme_mod('popup_image'))
+    );
+    wp_localize_script('dummy-js', 'slideData', $slide_data);
+    wp_localize_script('dummy-js', 'popupData', $popup_data);
 }
 
 function register_top_nav_menu() {
@@ -78,6 +83,45 @@ function mytheme_customize_register($wp_customize)
             )
         )
     );
+    
+    $wp_customize->add_section('popup', array('title'=>__('Popup','dummy'), 'priority'=>1));
+    $wp_customize->add_setting('popup_image');
+    $wp_customize->add_setting('popup_link');
+    $wp_customize->add_setting('show_popup', array(
+        'type' => 'option',
+        'default'    => '1'
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'show_popup',
+            array(
+                'label'     => __('Show popup', 'dummy'),
+                'section'   => 'popup',
+                'settings'  => 'show_popup',
+                'type'      => 'checkbox',
+            )
+        )
+    );
+    $wp_customize->add_control(
+        'popup_link',
+        array(
+            'label'      => __( 'Set popup link', 'dummy' ),
+            'section'    => 'popup',
+            'settings'   => 'popup_link'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'popup_image',
+            array(
+                'label'      => __( 'Upload popup image', 'dummy' ),
+                'section'    => 'popup',
+                'settings'   => 'popup_image'
+            )
+        )
+    );    
 }
 add_action('wp_enqueue_scripts', 'load_dummy');
 add_action('init', 'register_top_nav_menu');

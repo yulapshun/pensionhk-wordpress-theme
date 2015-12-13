@@ -1,5 +1,9 @@
 window.onload = function() {
-    console.log(slideData);
+    initSlide();
+    initPopup();
+}
+
+function initSlide() {
     var slide = document.querySelector(".slide");
     var previousBackground = slide.querySelector(".background.previous-slide");
     var currentBackground = slide.querySelector(".background.current-slide");
@@ -104,7 +108,7 @@ window.onload = function() {
     rightButton.onclick = function() {
 
 	if (!transitioning) {
-	
+	    
 	    transitioning = true;
 	    
 	    clearInterval(intervalID);
@@ -136,5 +140,27 @@ window.onload = function() {
 	    
 	    intervalID = startSlideShow();
 	}
+    }    
+}
+
+function initPopup() {
+    var popup = document.querySelector(".popup");
+    var topbar = popup.querySelector(".topbar");
+    var content = popup.querySelector(".content");
+    var closeBtn = topbar.querySelector("svg");
+
+    console.log(popupData);
+    
+    content.style.backgroundImage = "url(\'" + popupData.imageUrl + "\')";
+
+    if (popupData.enable) {
+	setTimeout(function() {
+	    popup.classList.add("show");
+	}, 2000);
+    }
+    
+    topbar.onclick = function() {
+	popup.classList.remove("show");
+	popup.classList.add("hide");
     }    
 }

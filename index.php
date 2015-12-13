@@ -47,7 +47,8 @@ the_posts_pagination(array(
     'next_text'=>__( '下一頁', 'dummy' )
 ));
 $wp_query = $temp;
-
+//include(locate_template('popup.php'));
+get_template_part('popup');
 ?>
 
 </main><!-- .site-main -->
