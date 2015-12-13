@@ -9,7 +9,6 @@
  * @since Twenty Fifteen 1.0
  */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
@@ -20,9 +19,8 @@
 
 	<div class="entry-content">
 		<?php
-			/* translators: %s: Name of current post */
 			the_content();
 		?>
 	</div><!-- .entry-content -->
-
+        <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5"></div>
 </article><!-- #post-## -->
