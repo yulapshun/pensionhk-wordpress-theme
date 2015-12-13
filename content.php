@@ -39,7 +39,7 @@ the_date();
 $post_count = 0;
 while ( $sidebar_query->have_posts() ) : $sidebar_query->the_post();
 $permalink = get_the_permalink();
-echo "<a href=".$permalink."><div class=\"post post-".($post_count % 2)."\"><div class=\"post-title\">".get_the_title()."</div><div class=\"post-date\">".get_the_date()."</div></div></a>";
+echo "<a href=".$permalink."><div class=\"side-bar-post side-bar-post-".($post_count % 2)."\"><div class=\"side-bar-title\">".get_the_title()."</div><div class=\"post-date\">".get_the_date()."</div></div></a>";
 $post_count++;
 endwhile;
 wp_reset_postdata();
@@ -57,6 +57,9 @@ foreach ( $tags as $tag ) {
     ?>
 </div>
 </div><!-- .sidebar -->
-
+        <div class="facebook">
+    <div class="fb-like" daga-href="<?php echo get_the_permalink(); ?>" data-share="true"></div>
+    <br />
     <div class="fb-comments" data-href="<?php echo get_the_permalink(); ?>" data-numposts="5"></div>
+    </div>
 </div>

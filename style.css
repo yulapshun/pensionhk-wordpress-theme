@@ -355,6 +355,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     width: 800px;
     margin: 0 5px;
     margin-right: 20px;
+    margin-bottom: 100px;
 }
 
 .content .post img {
@@ -380,23 +381,27 @@ Use it to make something cool, have fun, and share what you've learned with othe
     font-weight: bold;
 }
 
-.content .sidebar .post-wrapper .post{
+.content .sidebar .post-wrapper a{
+    text-decoration: none;
+}
+
+.content .sidebar .post-wrapper .side-bar-post{
     padding: 10px;
 }
 
-.content .sidebar .post-wrapper .post.post-0{
+.content .sidebar .post-wrapper .side-bar-post.side-bar-post-0{
     background-color: #E3F3FE;
 }
 
-.content .sidebar .post-wrapper .post.post-1{
+.content .sidebar .post-wrapper .side-bar-post.side-bar-post-1{
     background-color: #FFF;
 }
 
-.content .sidebar .post-wrapper .post .post-title{
+.content .sidebar .post-wrapper .side-bar-post .side-bar-title{
     
 }
 
-.content .sidebar .post-wrapper .post .post-date{
+.content .sidebar .post-wrapper .side-bar-post .post-date{
     padding-top: 5px;
     padding-left: 5px;
     font-size: 11px;
