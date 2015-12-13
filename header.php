@@ -28,7 +28,9 @@
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
       <img class="banner-img" src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>" />
       </a>
-      <img class="banner-img-right" src="<?php echo esc_url( get_theme_mod( 'header_image_right' ) ); ?>" alt="right header image" />
+      <a href="<?php echo esc_url(get_theme_mod('right_header_image_link')); ?>">
+      <img class="banner-img-right" src="<?php echo esc_url(get_theme_mod('right_header_image')); ?>" alt="right header image" />
+      </a>
       </div>
    <nav>
    <ul class="nav-menu">

@@ -57,9 +57,16 @@ $defaults = array(
 function mytheme_customize_register($wp_customize)
 {
     $wp_customize->add_section('header_image_right', array('title'=>__('Right Header Image','dummy'), 'priority'=>1));
-    $wp_customize->add_setting( 'header_image_right' , array(
-
-    ) );
+    $wp_customize->add_setting('right_header_image');
+    $wp_customize->add_setting('right_header_image_link');
+    $wp_customize->add_control(
+        'right_header_image_link',
+        array(
+            'label'      => __( 'Set right header image link', 'dummy' ),
+            'section'    => 'header_image_right',
+            'settings'   => 'right_header_image_link'
+        )
+    );
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
@@ -67,7 +74,7 @@ function mytheme_customize_register($wp_customize)
             array(
                 'label'      => __( 'Upload right header image', 'dummy' ),
                 'section'    => 'header_image_right',
-                'settings'   => 'header_image_right'
+                'settings'   => 'right_header_image'
             )
         )
     );
