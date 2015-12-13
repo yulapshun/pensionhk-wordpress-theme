@@ -46,13 +46,15 @@ wp_reset_postdata();
     ?>
 </div><!-- .post-wrapper -->
 <div class="tag-list">
-    <div>標籤: </div>
     <?php
-    $tags = get_tags();
+    $tags = get_the_tags();
+if (count($tags) > 1) {    
+echo "<div>標籤: </div>";
 foreach ( $tags as $tag ) {
 	$tag_link = get_tag_link( $tag->term_id );
     $tag_name = $tag->name;
     echo "<a href=\"".$tag_link."\"><div class=\"tag\">".$tag_name."</div></a>";
+}
 }
     ?>
 </div>
