@@ -1,6 +1,7 @@
 <?php
 get_header();
-if (is_home()) {
+$page = get_query_var('paged');
+if (is_home() && $page == 0) {
   get_template_part('slide');
 }
 ?>

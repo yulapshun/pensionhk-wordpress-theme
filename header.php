@@ -36,6 +36,7 @@
    <nav>
    <ul class="nav-menu">
    <?php wp_list_categories('order_by=ID&hide_empty=0&title_li=&exclude=1'); ?>
+      <li class="about"><a href="about">關於惱人媒體</a></li>
    </ul>
    </nav>
    </header><!-- .site-header -->
