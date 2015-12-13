@@ -315,6 +315,59 @@ Use it to make something cool, have fun, and share what you've learned with othe
     margin-top: 10px;
 }
 
+.cell .text {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 85px;
+    width: 390px;
+    background-color: rgba(227, 243, 254, 0.8);
+}
+
+.cell .text:hover {
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    height: 390px;
+}		   
+
+.cell .text .title {
+    padding: 10px 10px 17px 10px;
+    width: 370px;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.cell .text .title .date {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.cell .text .content {
+    padding: 10px;
+    width: 370px;
+}
+
 .cell.col-0 {
     margin-left: 0px;
 }
@@ -325,16 +378,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .cell.col-2 {
     margin-left: 10px;
-}
-
-.cell .text {
-    position: absolute;
-    overflow: hidden;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* content */

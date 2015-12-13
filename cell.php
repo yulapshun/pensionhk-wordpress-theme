@@ -23,9 +23,16 @@ if (has_post_thumbnail()){
     $thumb_url = null;
 }
 ?>
+<?php echo "<a href=".esc_url(get_permalink()).">"?>
 <div class='cell col-<?php echo $count % 3; ?>' style="<?php echo "background-image: url('".$thumb_url."')" ?>">
 <div class='text'>
-   <?php the_title(sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>'); ?>
-   <?php the_excerpt() ?>
+<div class="title">
+   <?php echo "<div>".get_the_title()."</div><div class=\"date\">".get_the_date()."</div>" ?>                                    
 </div>
+<hr />
+<div class="content">                                                                                         
+   <?php echo get_the_excerpt() ?>
+</div>                                                                                        
+</div>
+<?php echo "</a>" ?>                                                                                         
 </div><!-- .cell -->
