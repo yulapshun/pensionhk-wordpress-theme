@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?> class="no-js">
    <head>
    <title>惱人媒體</title>
+      <link rel="shortcut icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico" type="image/x-icon" />
    <meta charset="<?php bloginfo( 'charset' ); ?>">
    <meta name="viewport" content="width=device-width">
       <meta http-equiv="cache-control" content="max-age=0" />
@@ -36,7 +37,7 @@
    <nav>
    <ul class="nav-menu">
    <?php wp_list_categories('order_by=ID&hide_empty=0&title_li=&exclude=1'); ?>
-      <li class="about"><a href="about">關於惱人媒體</a></li>
+      <li class="about"><a href="about">關於惱人媒體</a></li>      
    </ul>
    </nav>
    </header><!-- .site-header -->
