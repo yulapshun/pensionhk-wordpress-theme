@@ -23,8 +23,9 @@ if (has_post_thumbnail()){
     $thumb_url = null;
 }
 ?>
+<div class='cell col-<?php echo $count % 3; ?>'>
 <?php echo "<a href=".esc_url(get_permalink()).">"?>
-<div class='cell col-<?php echo $count % 3; ?>' style="<?php echo "background-image: url('".$thumb_url."')" ?>">
+<div class='cell-background' style="<?php echo "background-image: url('".$thumb_url."')" ?>">
 <div class='text'>
 <div class="title">
    <?php echo "<div>".get_the_title()."</div><div class=\"date\">".get_the_date()."</div>" ?>                                    
@@ -34,5 +35,6 @@ if (has_post_thumbnail()){
    <?php echo get_the_excerpt() ?>
 </div>                                                                                        
 </div>
-<?php echo "</a>" ?>                                                                                         
+</div>
+</a>
 </div><!-- .cell -->

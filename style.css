@@ -37,20 +37,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .nav-menu {
-    border-color: #0000FF;
     background-color: #7EC0EE;
     width: 1200px;
     margin: 0 auto;
-    padding: 8px 0;
+    padding: 0 0;
 }
 
 .nav-menu li {
     display: inline-block;
+    height: 20px;
     position: relative;
     list-style-type: none;
     text-align: left;
     background-color: #7EC0EE;
-    padding: 5px 0;
+    padding: 10px 0;
+}
+
+.nav-menu li:hover {
+    background-color: #ABD8F8;
 }
 
 .nav-menu li a {
@@ -62,6 +66,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     display: none;
     position: absolute;
     z-index: 999;
+    padding-top: 10px;
     padding-left: 0;
 }
 
@@ -122,11 +127,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -ms-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
 }
 
 .slide .background.to-previous {
@@ -135,11 +140,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -ms-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
     left: -1200px;
 }
 
@@ -149,11 +154,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -ms-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
     left: 0px;
 }
 
@@ -163,11 +168,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -ms-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
     left: 1200px;
 }
 
@@ -209,10 +214,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .popup {
     position: fixed;
-    bottom: -320px;
+    bottom: -321px;
     right: 50px;
     height: 320px;
     width: 300px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #378DCA;
+    border-bottom-width: 0px;
 }
 
 .popup.show {
@@ -240,7 +249,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     -ms-transition-timing-function: linear;
     -o-transition-timing-function: linear;
     transition-timing-function: linear;
-    bottom: -320px;
+    bottom: -321px;
 }
 
 .popup .topbar {
@@ -289,7 +298,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .pagination .page-numbers {
     padding: 5px;
-    background-color: #7EC0EE;
+    background-color: #FFF;
     border-style: solid;
     border-width: 1px;
     border-color: #378DCA;
@@ -297,7 +306,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .pagination .current {
-    background-color: #FFDAAB;
+    background-color: #7EC0EE;
 }
 
 /* grid */
@@ -307,16 +316,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
     margin: 0 auto;
 }
 
+.grid a {
+    display: inline-block;
+    width: 390px;
+    height: 390px;
+}
+
 .cell {
     display: inline-block;
     position: relative;
     background-color: #AFAFAF;
+    margin-top: 10px;
+    width: 390px;
+    height: 390px;
+}
+
+.cell .cell-background {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    width: 390px;
-    height: 390px;
-    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .cell .text {
@@ -325,11 +348,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -ms-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -ms-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
     position: absolute;
     overflow: hidden;
     left: 0;
@@ -346,13 +369,19 @@ Use it to make something cool, have fun, and share what you've learned with othe
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -ms-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -ms-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
     height: 390px;
 }		   
+
+.cell .text hr {
+    color: #3A3A3A;
+    background-color: #3A3A3A;
+    border-color: #3A3A3A;
+}
 
 .cell .text .title {
     padding: 10px 10px 17px 10px;
@@ -442,6 +471,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .content .sidebar .post-wrapper .side-bar-post.side-bar-post-1{
     background-color: #FFF;
+}
+
+.content .sidebar .post-wrapper .side-bar-post:hover{
+    background-color: #ABD8F8;
 }
 
 .content .sidebar .post-wrapper .side-bar-post .side-bar-title{
