@@ -11,9 +11,11 @@ if (is_home() && $page == 0) {
 $category = get_category(get_query_var('cat'));
 $cat_id = $category->cat_ID;
 $tag = get_query_var('tag');
+$search_query = get_search_query();
 $the_query = new WP_Query(array(
     'cat'=>$cat_id,
     'tag'=>$tag,
+    's' => $search_query,
     'post_type' => 'post',
     'posts_per_page' => 18,
     'paged' => ( get_query_var('paged') ) ? get_query_var('paged') : 1
