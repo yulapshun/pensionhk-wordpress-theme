@@ -51,9 +51,9 @@ body {
 }
 
 .nav-menu {
+    background-color: #FFD72B;
     position: fixed;
     z-index: 999;
-    background-color: #7EC0EE;
     width: 100%;
     margin: 0 auto;
     padding: 0 0;
@@ -65,12 +65,12 @@ body {
     position: relative;
     list-style-type: none;
     text-align: left;
-    background-color: #7EC0EE;
+    background-color: #FFD72B;
     padding: 10px 0;
 }
 
 .nav-menu li:hover {
-    background-color: #ABD8F8;
+    background-color: #FFE46F;
 }
 
 .nav-menu li a {
@@ -104,7 +104,7 @@ body {
 }
 
 .nav-menu li.search:hover {
-    background-color: #7EC0EE;
+    background-color: #FFD626;
 }
 
 .nav-menu li.search input {
@@ -410,7 +410,7 @@ body {
     bottom: 0;
     height: 85px;
     width: 390px;
-    background-color: rgba(227, 243, 254, 0.8);
+    background-color: rgba(255, 247, 213, 0.8);
 }
 
 .cell .text:hover {
@@ -471,9 +471,9 @@ body {
 }
 
 .content .entry-header hr{
-    color: #ABD8F8;
-    background-color: #ABD8F8;
-    border-color: #ABD8F8;
+    color: #FFD626;
+    background-color: #FFD626;
+    border-color: #FFD626;
 }
 
 .content .post {
@@ -496,12 +496,12 @@ body {
 
 .content .sidebar .post-wrapper {
     overflow: hidden;
-    border: solid #378DCA 1px;
+    border: solid #FFCF00 1px;
     margin-right: 5px;
 }
 
 .content .sidebar .category-name {
-    background-color: #7EC0EE;
+    background-color: #FFD72B;
     padding: 10px 5px;
     font-size: large;
     font-weight: bold;
@@ -516,7 +516,7 @@ body {
 }
 
 .content .sidebar .post-wrapper .side-bar-post.side-bar-post-0{
-    background-color: #E3F3FE;
+    background-color: #FFF7D5;
 }
 
 .content .sidebar .post-wrapper .side-bar-post.side-bar-post-1{
@@ -524,7 +524,7 @@ body {
 }
 
 .content .sidebar .post-wrapper .side-bar-post:hover{
-    background-color: #ABD8F8;
+    background-color: #FFE46F;
 }
 
 .content .sidebar .post-wrapper .side-bar-post .side-bar-title{
