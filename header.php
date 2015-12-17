@@ -26,6 +26,13 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
    <header id="masthead" class="site-header" role="banner">
+         <nav>
+   <ul class="nav-menu">
+   <?php wp_list_categories('order_by=ID&hide_empty=0&title_li=&exclude=1'); ?>
+      <li class="search"><?php get_search_form(); ?></li>
+      <li class="about"><a href="about">關於惱人媒體</a></li>
+   </ul>
+   </nav>
    <div class="banner">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
       <img class="banner-img" src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>" />
@@ -34,12 +41,5 @@
       <img class="banner-img-right" src="<?php echo esc_url(get_theme_mod('right_header_image')); ?>" alt="right header image" />
       </a>
       </div>
-   <nav>
-   <ul class="nav-menu">
-   <?php wp_list_categories('order_by=ID&hide_empty=0&title_li=&exclude=1'); ?>
-      <li class="search"><?php get_search_form(); ?></li>
-      <li class="about"><a href="about">關於惱人媒體</a></li>
-   </ul>
-   </nav>
    </header><!-- .site-header -->
       

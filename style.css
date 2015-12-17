@@ -18,27 +18,43 @@ Use it to make something cool, have fun, and share what you've learned with othe
     color: #3A3A3A;
 }
 
+html.no-js {
+    margin-top: 0px !important;
+}
+
+body {
+    margin: 0;
+}
+
+.site-header {
+    height: 160px;
+}
+
 .banner {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto;    
     width: 1200px;
     height: 100px;
 }
 
 .banner-img {
+    padding-top: 60px;
     width: 300px;
     height: 100px;
 }
 
 .banner-img-right {
+    padding-top: 60px;
     float: right;
     width: 900px;
     height: 100px
 }
 
 .nav-menu {
+    position: fixed;
+    z-index: 999;
     background-color: #7EC0EE;
-    width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 0;
 }
@@ -124,7 +140,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
     width: 1200px;
     height: 500px;
     margin: 0 auto;
-    margin-top: 10px;
     overflow: hidden;
 }
 
