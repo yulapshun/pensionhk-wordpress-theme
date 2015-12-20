@@ -10,9 +10,10 @@ function initSlide() {
     var nextBackground = slide.querySelector(".background.next-slide");
     var leftButton = slide.querySelector(".left-arrow");
     var rightButton = slide.querySelector(".right-arrow");
-    var bottomView = slide.querySelector(".bottom-view");
+    var bottomView = slide.querySelector(".bottom-view");    
     var titleView = bottomView.querySelector(".title");
     var contentView = bottomView.querySelector(".content");
+    var dotsView = bottomView.querySelector(".dots");
     var links = slide.querySelectorAll(".link");
     var maxIndex = slideData.length - 1;
     var previousIndex = maxIndex;
@@ -29,6 +30,31 @@ function initSlide() {
     for (var i in links) {
 	links[i].href = slideData[currentIndex].link;
     }
+
+    var dotFactory = function(i) {
+	var dot = document.createElement("div");
+	dot.style.width = "10px";
+	dot.style.height = "10px";
+	dot.style.borderRadius = "5px";
+	dot.style.background = "#AFAFAF";
+	dot.style.position = "absolute";
+	dot.style.left = i * 15 + "px";
+	dot.style.cursor = "pointer";
+	return dot;
+    };
+    var dotsContainer = document.createElement("div");
+    dotsContainer.style.position = "absolute";
+    dotsContainer.style.width = (slideData.length - 1) * 15 + 10 + "px";
+    dotsContainer.style.height = "20px";
+    dotsContainer.style.top = "5px";
+    dotsContainer.style.left = 400 - ((slideData.length - 1) * 15 + 10) / 2 + "px";
+    dotsView.appendChild(dotsContainer);
+    
+    var t = document.createTextNode("CLICK ME");
+    for (var i = 0; i < slideData.length; i++){
+	dotsContainer.appendChild(dotFactory(i));
+    }
+    
     previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
     currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
     nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";

@@ -30,6 +30,7 @@
       </div>      
     </a>
     <div class="content"></div>
+    <div class="dots"></div>
   </div>
 </div>
 
