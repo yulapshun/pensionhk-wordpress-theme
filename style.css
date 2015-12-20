@@ -362,14 +362,14 @@ body {
 /* grid */
 .grid {
     position: relative;
-    width: 1200px;
+    width: 900px;
     margin: 0 auto;
 }
 
 .grid a {
     display: inline-block;
-    width: 390px;
-    height: 390px;
+    width: 290px;
+    height: 290px;
 }
 
 .cell {
@@ -377,8 +377,8 @@ body {
     position: relative;
     background-color: #AFAFAF;
     margin-top: 10px;
-    width: 390px;
-    height: 390px;
+    width: 290px;
+    height: 290px;
 }
 
 .cell .cell-background {
@@ -409,7 +409,7 @@ body {
     right: 0;
     bottom: 0;
     height: 85px;
-    width: 390px;
+    width: 290px;
     background-color: rgba(227, 243, 254, 0.8);
 }
 
@@ -424,7 +424,7 @@ body {
     -ms-transition-timing-function: ease;
     -o-transition-timing-function: ease;
     transition-timing-function: ease;
-    height: 390px;
+    height: 290px;
 }		   
 
 .cell .text hr {
@@ -435,7 +435,7 @@ body {
 
 .cell .text .title {
     padding: 10px 10px 17px 10px;
-    width: 370px;
+    width: 270px;
     font-size: 20px;
     line-height: 25px;
     text-align: center;
@@ -448,7 +448,7 @@ body {
 
 .cell .text .content {
     padding: 10px;
-    width: 370px;
+    width: 270px;
 }
 
 .cell.col-0 {
@@ -474,6 +474,14 @@ body {
     color: #ABD8F8;
     background-color: #ABD8F8;
     border-color: #ABD8F8;
+}
+
+.content .page {
+    float: left;
+    width: 800px;
+    margin: 0 5px;
+    margin-right: 20px;
+    margin-bottom: 100px;
 }
 
 .content .post {
