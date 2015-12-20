@@ -137,8 +137,8 @@ body {
 
 .slide {
     position: relative;
-    width: 1200px;
-    height: 500px;
+    width: 900px;
+    height: 400px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -151,8 +151,8 @@ body {
 .slide .background {
     background-color: #AFAFAF;
     position: absolute;
-    width: 1200px;
-    height: 500px;
+    width: 900px;
+    height: 400px;
     top: 0;    
     background-repeat: no-repeat;
     background-size: cover;
@@ -160,7 +160,7 @@ body {
 }
 
 .slide .background.previous-slide {
-    left: -1200px;
+    left: -900px;
 }
 
 .slide .background.current-slide {
@@ -168,7 +168,7 @@ body {
 }
 
 .slide .background.next-slide {
-    left: 1200px;
+    left: 900px;
 }
 
 .transitioning {
@@ -195,7 +195,7 @@ body {
     -ms-transition-timing-function: ease-out;
     -o-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-    left: -1200px;
+    left: -900px;
 }
 
 .slide .background.to-current {
@@ -223,7 +223,7 @@ body {
     -ms-transition-timing-function: ease-out;
     -o-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-    left: 1200px;
+    left: 900px;
 }
 
 .slide .arrow {
@@ -253,7 +253,7 @@ body {
     bottom: 0;
     left: 50px;
     right: 50px;
-    height: 200px;
+    height: 100px;
 }
 
 .slide .bottom-view .content {
@@ -452,15 +452,15 @@ body {
 }
 
 .cell.col-0 {
-    margin-left: 0px;
+    margin-left: 2px;
 }
 
 .cell.col-1 {
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 .cell.col-2 {
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 /* content */
