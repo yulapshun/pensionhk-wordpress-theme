@@ -32,8 +32,8 @@ body {
 
 .banner {
     display: block;
-    margin: 0 auto;    
-    width: 1200px;
+    margin: 0 auto;
+    width: 900px;
     height: 100px;
 }
 
@@ -46,7 +46,7 @@ body {
 .banner-img-right {
     padding-top: 60px;
     float: right;
-    width: 900px;
+    width: 600px;
     height: 100px
 }
 
