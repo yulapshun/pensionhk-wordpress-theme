@@ -14,7 +14,18 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+
 * {
+    font-family: 'cwTeXHei';
     color: #3A3A3A;
 }
 
@@ -257,10 +268,11 @@ body {
     height: 100px;
 }
 
-.slide .bottom-view .title{
+.slide .bottom-view .title{    
     max-height: 30px;
     overflow: hidden;
-    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px !important;
     line-height: 30px;
 }
 
