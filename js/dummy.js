@@ -1,6 +1,12 @@
 window.onload = function() {
     initSlide();
     initPopup();
+    var navItems = document.querySelectorAll(".nav-menu li ul");
+    for (var i in navItems) {
+	if (navItems[i].style) {
+	    navItems[i].style.width = window.innerWidth + "px";
+	}
+    }
 }
 
 function initSlide() {
@@ -89,11 +95,6 @@ function initSlide() {
 		}
 	    }, 501);
 	}
-	// currentBackground.classList.remove("to-previous");
-    	// nextBackground.classList.remove("to-current");
-	// previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
-    	// currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
-    	// nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";
     };
     
     var dotFactory = function(i) {

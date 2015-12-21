@@ -87,11 +87,12 @@ body {
 }
 
 .nav-menu li:hover ul {
-    display: block;
+    display: inline-block;
 }
 
 .nav-menu li:hover ul li {
-    display: block;
+    display: inline-block;
+    float: left;
 }
 
 .nav-menu li.about {
