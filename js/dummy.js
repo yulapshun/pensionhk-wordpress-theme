@@ -85,6 +85,8 @@ function initSlide() {
 			node.style.background = "#AFAFAF";
 		    }
 		}
+		titleView.innerHTML = slideData[currentIndex].title;
+		contentView.innerHTML = slideData[currentIndex].excerpt;
 		previousBackground.classList.remove("to-current");
 		currentBackground.classList.remove("to-previous");
 		currentBackground.classList.remove("to-next");
