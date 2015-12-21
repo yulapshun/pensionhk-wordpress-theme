@@ -488,7 +488,7 @@ body {
 /* content */
 
 .content {
-    width: 1200px;
+    width: 900px;
     margin: 0 auto;
 }
 
@@ -508,14 +508,14 @@ body {
 
 .content .post {
     float: left;
-    width: 800px;
+    width: 600px;
     margin: 0 5px;
     margin-right: 20px;
     margin-bottom: 100px;
 }
 
 .content .post img {
-    max-width:800px;
+    max-width:600px;
     width: auto;
     height: auto;
 }
