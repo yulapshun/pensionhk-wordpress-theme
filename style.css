@@ -278,6 +278,10 @@ body {
     height: 20px;
 }
 
+.slide .bottom-view .dots .active {
+    background-color: #7EC0EE;
+}
+
 /* popup */
 
 .popup {

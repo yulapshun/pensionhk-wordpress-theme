@@ -40,6 +40,7 @@ function initSlide() {
 	dot.style.position = "absolute";
 	dot.style.left = i * 15 + "px";
 	dot.style.cursor = "pointer";
+	dot.setAttribute("id", "dot-" + i);
 	return dot;
     };
     var dotsContainer = document.createElement("div");
@@ -58,6 +59,14 @@ function initSlide() {
     previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
     currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
     nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";
+    for(var i = 0; i < dotsContainer.childNodes.length; i++) {
+	var node = dotsContainer.childNodes[i];
+	if (i === currentIndex) {
+	    node.style.background = "#7EC0EE";
+	} else {
+	    node.style.background = "#AFAFAF";
+	}
+    }
     titleView.innerHTML = slideData[currentIndex].title;
     contentView.innerHTML = slideData[currentIndex].excerpt;
 
@@ -65,18 +74,29 @@ function initSlide() {
 	return setInterval(function() {
 	    
 	    transitioning = true;
-	    
+	    currentDot = dotsContainer.querySelector("#dot-" + currentIndex);	    
     	    currentBackground.classList.add("to-previous");
     	    nextBackground.classList.add("to-current");
+	    dotsContainer.querySelector("#dot-" + currentIndex).classList.add("active");		
 	    
     	    setTimeout(function() {
 		
+		dotsContainer.querySelector("#dot-" + currentIndex).classList.remove("active");		
     		previousIndex = previousIndex < maxIndex ? previousIndex + 1 : 0;
     		currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
     		nextIndex = nextIndex < maxIndex ? nextIndex + 1 : 0;
+		dotsContainer.querySelector("#dot-" + currentIndex).classList.add("active");		
 
     		currentBackground.classList.remove("to-previous");
     		nextBackground.classList.remove("to-current");
+		for(var i = 0; i < dotsContainer.childNodes.length; i++) {
+		    var node = dotsContainer.childNodes[i];
+		    if (i === currentIndex) {
+			node.style.background = "#7EC0EE";
+		    } else {
+			node.style.background = "#AFAFAF";
+		    }
+		}
 
 		for (var i in links) {
 		    links[i].href = slideData[currentIndex].link;
@@ -106,20 +126,32 @@ function initSlide() {
 	    currentBackground.classList.add("to-next");
 	    
     	    setTimeout(function() {
-		
+
+		dotsContainer.querySelector("#dot-" + currentIndex).classList.remove("active");		
     		previousIndex = previousIndex > 0 ? previousIndex - 1 : maxIndex;
     		currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
     		nextIndex = nextIndex > 0 ? nextIndex - 1 : maxIndex;
+		dotsContainer.querySelector("#dot-" + currentIndex).classList.add("active");		
 		
 		previousBackground.classList.remove("to-current");
     		currentBackground.classList.remove("to-next");
 
+		for(var i = 0; i < dotsContainer.childNodes.length; i++) {
+		    var node = dotsContainer.childNodes[i];
+		    if (i === currentIndex) {
+			node.style.background = "#7EC0EE";
+		    } else {
+			node.style.background = "#AFAFAF";
+		    }
+		}
 		for (var i in links) {
 		    links[i].href = slideData[currentIndex].link;
 		}
     		previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
     		currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
     		nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";
+		currentDot = dotsContainer.querySelector("#dot-" + currentIndex);
+		currentDot.style.backgroundColor = "#7EC0EE";
 		titleView.innerHTML = slideData[currentIndex].title;
 		contentView.innerHTML = slideData[currentIndex].excerpt;
 
@@ -143,20 +175,32 @@ function initSlide() {
 	    nextBackground.classList.add("to-current");
 
     	    setTimeout(function() {
-		
+
+		dotsContainer.querySelector("#dot-" + currentIndex).classList.remove("active");		
     		previousIndex = previousIndex < maxIndex ? previousIndex + 1 : 0;
     		currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
     		nextIndex = nextIndex < maxIndex ? nextIndex + 1 : 0;
+		dotsContainer.querySelector("#dot-" + currentIndex).classList.add("active");		
 
     		currentBackground.classList.remove("to-previous");
     		nextBackground.classList.remove("to-current");
 
+		for(var i = 0; i < dotsContainer.childNodes.length; i++) {
+		    var node = dotsContainer.childNodes[i];
+		    if (i === currentIndex) {
+			node.style.background = "#7EC0EE";
+		    } else {
+			node.style.background = "#AFAFAF";
+		    }
+		}
 		for (var i in links) {
 		    links[i].href = slideData[currentIndex].link;
 		}
     		previousBackground.style.backgroundImage = "url(\'" + slideData[previousIndex].thumbUrl + "\')";
     		currentBackground.style.backgroundImage = "url(\'" + slideData[currentIndex].thumbUrl + "\')";
     		nextBackground.style.backgroundImage = "url(\'" + slideData[nextIndex].thumbUrl + "\')";
+		currentDot = dotsContainer.querySelector("#dot-" + currentIndex);
+		currentDot.style.backgroundColor = "#7EC0EE";
 		titleView.innerHTML = slideData[currentIndex].title;
 		contentView.innerHTML = slideData[currentIndex].excerpt;
 
@@ -175,8 +219,6 @@ function initPopup() {
     var content = popup.querySelector(".content");
     var closeBtn = topbar.querySelector("svg");
 
-    console.log(popupData);
-    
     content.style.backgroundImage = "url(\'" + popupData.imageUrl + "\')";
 
     if (popupData.enable) {
