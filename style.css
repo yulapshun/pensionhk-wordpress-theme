@@ -62,6 +62,7 @@ body {
 }
 
 .nav-menu {
+    font-weight: bold;
     position: fixed;
     z-index: 999;
     background-color: #7EC0EE;
