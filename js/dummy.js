@@ -33,10 +33,13 @@ function initSlide() {
 
     slide.onmouseover = function() {
 	clearInterval(intervalID);
+	intervalID = null;
     }
 
     slide.onmouseleave = function() {
-	intervalID = startSlideShow();
+	if (!intervalID) {
+	    intervalID = startSlideShow();
+	}
     }
     
     var onClickDot = function(i) {
@@ -45,6 +48,7 @@ function initSlide() {
 	    transitioning = true;
 
 	    clearInterval(intervalID);
+	    intervalID = null;
 	    if (currentIndex > i) {
 		previousIndex = i > 0 ? i - 1 : maxIndex;
     		nextIndex = i < maxIndex ? i + 1 : 0;
@@ -80,7 +84,9 @@ function initSlide() {
 		currentBackground.classList.remove("to-next");
     		nextBackground.classList.remove("to-current");
 		transitioning = false;
-		intervalID = startSlideShow();
+		if (!intervalID) {
+		    intervalID = startSlideShow();
+		}
 	    }, 501);
 	}
 	// currentBackground.classList.remove("to-previous");
@@ -181,6 +187,7 @@ function initSlide() {
 	    transitioning = true;
 	    
 	    clearInterval(intervalID);
+	    intervalID = null;
 
 	    previousBackground.classList.add("to-current");
 	    currentBackground.classList.add("to-next");
@@ -216,7 +223,9 @@ function initSlide() {
 		contentView.innerHTML = slideData[currentIndex].excerpt;
 
 		transitioning = false;
-		intervalID = startSlideShow();		
+		if (!intervalID) {
+		    intervalID = startSlideShow();
+		}
     	    }, 501);	
 	    
 
@@ -230,6 +239,7 @@ function initSlide() {
 	    transitioning = true;
 	    
 	    clearInterval(intervalID);
+	    intervalID = null;
 
 	    currentBackground.classList.add("to-previous");
 	    nextBackground.classList.add("to-current");
@@ -265,7 +275,9 @@ function initSlide() {
 		contentView.innerHTML = slideData[currentIndex].excerpt;
 
 		transitioning = false;
-		intervalID = startSlideShow();
+		if (!intervalID) {
+		    intervalID = startSlideShow();
+		}
     	    }, 501);		    
 	}
     }    
