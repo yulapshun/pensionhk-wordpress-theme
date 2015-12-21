@@ -1,12 +1,13 @@
 window.onload = function() {
-    initSlide();
-    initPopup();
     var navItems = document.querySelectorAll(".nav-menu li ul");
     for (var i in navItems) {
 	if (navItems[i].style) {
 	    navItems[i].style.width = window.innerWidth + "px";
 	}
     }
+    console.log(window.innerWidth);
+    initSlide();
+    initPopup();
 }
 
 function initSlide() {
