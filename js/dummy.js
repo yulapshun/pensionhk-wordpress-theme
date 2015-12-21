@@ -31,6 +31,14 @@ function initSlide() {
 	links[i].href = slideData[currentIndex].link;
     }
 
+    slide.onmouseover = function() {
+	clearInterval(intervalID);
+    }
+
+    slide.onmouseleave = function() {
+	intervalID = startSlideShow();
+    }
+    
     var onClickDot = function(i) {
 
 	if (!transitioning && i !== currentIndex) {
