@@ -35,6 +35,7 @@ html.no-js {
 
 body {
     margin: 0;
+    line-height: 150%;
 }
 
 .site-header {
@@ -62,6 +63,7 @@ body {
 }
 
 .nav-menu {
+    line-height: 100%;
     font-weight: bold;
     position: fixed;
     z-index: 999;
@@ -149,6 +151,7 @@ body {
 /* slide */
 
 .slide {
+    line-height: 100%;
     position: relative;
     width: 900px;
     height: 400px;
@@ -475,6 +478,10 @@ body {
     font-size: 20px;
     line-height: 25px;
     text-align: center;
+}
+
+.cell .text .title div{
+    line-height: 25px;
 }
 
 .cell .text .title .date {
