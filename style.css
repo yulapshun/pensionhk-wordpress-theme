@@ -95,9 +95,9 @@ body {
 
 .nav-menu li ul {
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: 999;
-    padding-top: 10px;
+    padding-top: 6px;
     padding-left: 0;
 }
 
