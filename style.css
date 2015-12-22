@@ -589,6 +589,8 @@ body {
 }
 
 .content .sidebar .tag-list {
+    width: 270px;
+    float: right;
     padding-top: 5px;
 }
 
