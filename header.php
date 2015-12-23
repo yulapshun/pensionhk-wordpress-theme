@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" <?php language_attributes(); ?> class="no-js">
    <head>
    <title>惱人媒體</title>
       <link rel="shortcut icon" href="<?php bloginfo('siteurl'); ?>/favicon.ico" type="image/x-icon" />
@@ -10,6 +10,17 @@
       <meta http-equiv="expires" content="0" />
       <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
       <meta http-equiv="pragma" content="no-cache" />
+
+
+      <?php
+      if (!is_home() || $page != 0) {
+echo "<meta property=\"og:url\" content=\"".get_the_permalink()."\" />";
+echo "<meta property=\"og:type\" content=\"article\" />";
+echo "<meta property=\"og:title\" content=\"".get_the_title()."\" />";
+echo "<meta property=\"og:description\" content=\"".get_the_excerpt()."\" />";
+echo "<meta property=\"og:image\" content=\"".wp_get_attachment_url(get_post_thumbnail_id())."\" />";
+      }
+      ?>
    <!--[if lt IE 9]>
    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
    <![endif]-->
